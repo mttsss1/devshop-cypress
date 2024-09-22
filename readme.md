@@ -1,5 +1,3 @@
-![cypress](cypress.jpeg)
-
 ## Sobre 🔔
 
 Projeto de automação de testes do site: https://practice.automationtesting.in/, com foco em evoluir na automação!
