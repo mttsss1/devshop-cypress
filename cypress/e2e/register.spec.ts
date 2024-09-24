@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker'
 
 import { goToApp, menuOptions } from "../support/actions/Default.actions"
 import { buttonRegister, fillRegister, fillRegisterEmail, fillRegisterPassword } from "../support/actions/Register.actions"
-import { assertionEmptyInput, assertionRegisterSuccess } from "../support/assertions/Register.assertions"
+import { assertionEmptyInput, assertionPasswordTypeInput, assertionSuccess } from "../support/assertions/Default.assertions"
 
 describe('Dado que necessito criar uma conta', () => {
 
@@ -26,7 +26,7 @@ describe('Dado que necessito criar uma conta', () => {
 
             fillRegister(userEmail, userPassword)
 
-            assertionRegisterSuccess(userEmail)
+            assertionSuccess(userEmail)
 
         })
 
@@ -53,6 +53,18 @@ describe('Dado que necessito criar uma conta', () => {
             buttonRegister()
 
             assertionEmptyInput('Please provide a valid email address.')
+
+        })
+
+    })
+
+    context('Quando eu preciso verificar o input da senha é do tipo password', () => {
+
+        it('Então ao digitar a senha, deverá verificar o atributo do input', () => {
+
+            fillRegisterPassword(userPassword)
+
+            assertionPasswordTypeInput('Register')
 
         })
 

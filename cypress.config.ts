@@ -1,6 +1,9 @@
 import { defineConfig } from "cypress";
 
+require('dotenv').config()
+
 export default defineConfig({
+    env: { ...process.env },
     e2e: {
         supportFile: 'cypress/support/index.ts',
         "viewportWidth": 1440,
